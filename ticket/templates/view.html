@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1> VIEW MOVIE DETAILS</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    <tr>
+        <td>{{view.title}}</td>
+        <td>{{view.desc}}</td>
+        <td><img src="{{view.img.url}}" height="100px" width="100px"></td>
+        <td><a href="{% url 'Mapp:update' view.id %}" class="btn btn-warning btn-md">update</a></td>
+        <td><a href="{% url 'Mapp:delete' view.id %}" class="btn btn-warning btn-md">delete</a></td>
+    </tr>
+</table>
+{% endblock %}
